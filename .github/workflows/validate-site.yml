@@ -25,25 +25,32 @@ jobs:
         with:
           node-version: 22
 
+      - name: Recreate product images
+        if: github.event_name == 'push' && contains(github.event.head_commit.message, '[rebuild-product-images]')
+        shell: bash
+        run: |
+          python3 -m pip install --upgrade pip
+          python3 -m pip install "opencv-contrib-python-headless==4.10.0.84" "Pillow>=10.4,<12"
+          mkdir -p .cache
+          curl -L --fail --retry 3             -o .cache/EDSR_x4.pb             https://github.com/Saafke/EDSR_Tensorflow/raw/master/models/EDSR_x4.pb
+          python3 scripts/rebuild-product-images.py
+
       - name: Install dependencies
         run: npm install
-
-      - name: Render product images
-        if: github.event_name == 'push' && contains(github.event.head_commit.message, '[render-products]')
-        run: npm run render:products
 
       - name: Build static site
         run: npm run build
 
-      - name: Commit rendered product images
-        if: github.event_name == 'push' && contains(github.event.head_commit.message, '[render-products]')
+      - name: Commit recreated product images
+        if: github.event_name == 'push' && contains(github.event.head_commit.message, '[rebuild-product-images]')
+        shell: bash
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add public/img/products
           if git diff --cached --quiet; then
-            echo "No image changes to commit"
+            echo "No product image changes to commit"
             exit 0
           fi
-          git commit -m "Actualiza imágenes de producto renderizadas [skip ci]"
+          git commit -m "Actualiza imágenes reconstruidas de productos [skip ci]"
           git push origin HEAD:${GITHUB_REF_NAME}
