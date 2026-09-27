@@ -98,6 +98,8 @@ La fuente de verdad del catálogo está en src/data/products.ts.
 | --- | ---: |
 | Trapo Industrial cosido - color | S/ 1.90 por kilo |
 | Trapo Industrial cosido - blanco | S/ 3.10 por kilo |
+| Trapo Industrial cosido económico - color | S/ 1.70 por kilo |
+| Trapo Industrial cosido económico - blanco | S/ 2.80 por kilo |
 | Trapo Industrial suelto - color | S/ 3.10 por kilo |
 | Trapo Industrial suelto - blanco | S/ 3.90 por kilo |
 | Merma de jean | S/ 0.25 por kilo |
@@ -105,7 +107,7 @@ La fuente de verdad del catálogo está en src/data/products.ts.
 | Waipe - color | S/ 2.50 por kilo |
 | Waipe - blanco | S/ 4.50 por kilo |
 
-Estos precios fueron recuperados del último build publicado previo al rediseño. Antes de cambiar un precio en producción, validar que siga vigente.
+Los precios históricos fueron recuperados del último build publicado previo al rediseño. Los productos cosidos económicos se añadieron posteriormente con precios de S/ 1.70/kg en color y S/ 2.80/kg en blanco. Usan costura simple y no incorporan el refuerzo adicional de la versión estándar. Antes de cambiar un precio en producción, validar que siga vigente.
 
 ## WhatsApp y datos comerciales
 

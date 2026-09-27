@@ -48,6 +48,36 @@ export const PRODUCTS: Product[] = [
     searchLanguage: ["trapo blanco industrial", "trapo industrial blanco", "trapo cosido blanco"],
   },
   {
+    slug: "trapo-industrial-cosido-economico-color",
+    name: "Trapo Industrial cosido económico - color",
+    category: "cosido",
+    variant: "Económico · Color",
+    image: "/img/products/trapo-industrial-cosido-economico-color.webp",
+    price: 1.7,
+    summary:
+      "Trapo Industrial cosido económico - color, una alternativa de menor precio con costura simple y sin refuerzo adicional.",
+    description:
+      "Alternativa económica del trapo industrial cosido de color. Los retazos se unen mediante una costura simple y no incorporan el refuerzo adicional de la versión estándar, lo que permite ofrecer un menor precio. Mantiene un formato de paño para limpieza general de herramientas, piezas, maquinaria y superficies cuando no se requiere una confección reforzada.",
+    idealFor: ["Talleres", "Mantenimiento general", "Fábricas", "Limpieza frecuente"],
+    applications: ["Herramientas y piezas", "Maquinaria", "Superficies de trabajo", "Limpieza general"],
+    searchLanguage: ["trapo cosido económico", "trapo industrial económico", "trapo cosido sin refuerzo", "trapo cosido simple", "trapo cocido económico"],
+  },
+  {
+    slug: "trapo-industrial-cosido-economico-blanco",
+    name: "Trapo Industrial cosido económico - blanco",
+    category: "cosido",
+    variant: "Económico · Blanco",
+    image: "/img/products/trapo-industrial-cosido-economico-blanco.webp",
+    price: 2.8,
+    summary:
+      "Trapo Industrial cosido económico - blanco, una alternativa de menor precio con costura simple y sin refuerzo adicional.",
+    description:
+      "Alternativa económica del trapo industrial cosido blanco. Los retazos se unen mediante una costura simple y no incorporan el refuerzo adicional de la versión estándar, permitiendo un menor precio cuando no se necesita una confección reforzada. El color blanco facilita observar la suciedad o residuo retirado.",
+    idealFor: ["Mantenimiento general", "Talleres", "Limpieza frecuente", "Revisión visual de suciedad"],
+    applications: ["Herramientas y piezas", "Superficies", "Secado", "Limpieza general"],
+    searchLanguage: ["trapo cosido económico blanco", "trapo industrial económico blanco", "trapo cosido sin refuerzo blanco", "trapo cosido simple blanco", "trapo blanco cosido"],
+  },
+  {
     slug: "trapo-industrial-suelto-color",
     name: "Trapo Industrial suelto - color",
     category: "suelto",
