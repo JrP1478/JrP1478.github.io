@@ -61,7 +61,10 @@ jobs:
       - name: Deploy to gh-pages
         if: github.event_name == 'push' && github.ref_name == 'main'
         shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git remote set-url origin "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
           npx gh-pages -d dist -b gh-pages
