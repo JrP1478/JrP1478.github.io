@@ -5,13 +5,13 @@ import Breadcrumbs from "../../../components/Breadcrumbs.astro";
 import { PRODUCTS } from "../../../data/products";
 
 const recommended = PRODUCTS.filter((p) =>
-  ["trapo-industrial-cosido-color", "trapo-industrial-suelto-color", "waipe-color"].includes(p.slug)
+  ["trapo-industrial-cosido-color", "trapo-industrial-suelto-color", "waipe-color", "waipe-blanco"].includes(p.slug)
 );
 ---
 
 <BaseLayout
   title="Trapos para limpiar grasa y aceite | Biohebra Perú"
-  description="Compara trapo industrial cosido, trapo suelto y waipe de color para tareas con grasa, aceite, maquinaria y herramientas. Precios por kilo."
+  description="Compara trapo industrial cosido, trapo suelto y waipe para retirar grasa, aceite y lubricantes de piezas, herramientas, maquinaria y superficies."
 >
   <section class="page-hero">
     <div class="container">
@@ -20,12 +20,14 @@ const recommended = PRODUCTS.filter((p) =>
         <span class="eyebrow">Limpieza de trabajo</span>
         <h1>Trapos para limpiar grasa y aceite</h1>
         <p class="lead">
-          Si buscas material textil para retirar grasa o aceite de herramientas, maquinaria y
-          superficies de trabajo, compara estas opciones de Biohebra.
+          Los paños y wipers industriales se utilizan habitualmente para retirar aceite, grasa,
+          lubricantes y suciedad de piezas, herramientas, equipos y superficies. La elección depende
+          de la cantidad de residuo y de cómo necesitas manipular o reemplazar el material.
         </p>
       </div>
     </div>
   </section>
+
   <section class="section">
     <div class="container">
       <div class="product-grid">
@@ -33,14 +35,21 @@ const recommended = PRODUCTS.filter((p) =>
       </div>
     </div>
   </section>
+
   <section class="section section-soft">
     <div class="container rich-copy">
-      <h2>No existe una sola presentación para todos los trabajos</h2>
+      <h2>Cómo comparar las presentaciones</h2>
+      <ul>
+        <li><strong>Trapo suelto:</strong> práctico cuando el trabajo exige reemplazar retazos continuamente.</li>
+        <li><strong>Trapo cosido:</strong> ofrece una pieza conformada para tareas repetitivas.</li>
+        <li><strong>Waipe:</strong> alternativa para wipe-down de piezas, herramientas y superficies.</li>
+        <li><strong>Color:</strong> las manchas de grasa y aceite resultan visualmente menos evidentes durante el trabajo.</li>
+        <li><strong>Blanco:</strong> facilita observar la suciedad o residuo que se está retirando.</li>
+      </ul>
+      <h2>Antes de usar químicos</h2>
       <p>
-        La elección depende de la cantidad de suciedad, la superficie y la frecuencia con la que
-        necesitas cambiar el material. Para trabajos donde reemplazas retazos constantemente,
-        compara trapo suelto; si prefieres una pieza unida, revisa el cosido. El waipe es otra
-        alternativa habitual para limpieza y mantenimiento.
+        La compatibilidad con solventes, desengrasantes u otros químicos depende de la composición
+        real del material. Confirma ese uso antes de adoptarlo en un proceso técnico.
       </p>
     </div>
   </section>

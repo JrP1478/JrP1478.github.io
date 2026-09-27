@@ -9,7 +9,7 @@ const recommended = PRODUCTS.filter((p) => p.category !== "merma");
 
 <BaseLayout
   title="Trapos para limpieza industrial y mantenimiento | Biohebra Perú"
-  description="Trapo industrial suelto y cosido, waipe color y blanco para limpieza industrial, mantenimiento, maquinaria y superficies. Revisa precios por kilo."
+  description="Trapo industrial suelto y cosido, waipe color y blanco para limpieza general, mantenimiento, piezas, herramientas, maquinaria y superficies."
 >
   <section class="page-hero">
     <div class="container">
@@ -18,17 +18,32 @@ const recommended = PRODUCTS.filter((p) => p.category !== "merma");
         <span class="eyebrow">Mantenimiento y limpieza</span>
         <h1>Trapos para limpieza industrial</h1>
         <p class="lead">
-          Biohebra ofrece distintas presentaciones de material textil para limpieza frecuente,
-          mantenimiento, herramientas, piezas, superficies y maquinaria.
+          Los materiales de limpieza industrial se emplean en tareas como wipe-down de superficies,
+          mantenimiento general, limpieza de piezas y herramientas y retiro de aceite, grasa,
+          polvo o residuos de operación.
         </p>
       </div>
     </div>
   </section>
+
   <section class="section">
     <div class="container">
       <div class="product-grid">
         {recommended.map((product) => <ProductCard product={product} />)}
       </div>
+    </div>
+  </section>
+
+  <section class="section section-soft">
+    <div class="container rich-copy">
+      <h2>Elige por formato y control visual</h2>
+      <ul>
+        <li><strong>Suelto:</strong> para tomar retazos individuales y cambiarlos según avanza la tarea.</li>
+        <li><strong>Cosido:</strong> para quienes prefieren trabajar con una pieza textil conformada.</li>
+        <li><strong>Waipe:</strong> para limpieza general, mantenimiento y wipe-down de piezas y superficies.</li>
+        <li><strong>Blanco:</strong> útil cuando interesa ver con claridad el residuo que se retira.</li>
+        <li><strong>Color:</strong> opción habitual para suciedad de trabajo como grasa y aceite.</li>
+      </ul>
     </div>
   </section>
 </BaseLayout>

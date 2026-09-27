@@ -25,11 +25,11 @@ export const PRODUCTS: Product[] = [
     image: "/img/products/trapo-industrial-cosido-color.png",
     price: 1.9,
     summary:
-      "Trapo cosido de color para limpieza general, mantenimiento y trabajos con grasa o aceite.",
+      "Trapo cosido de color para limpieza general y retiro de grasa, aceite o suciedad de trabajo.",
     description:
-      "Una alternativa práctica para talleres, fábricas y áreas de mantenimiento que necesitan material textil reutilizable para limpieza frecuente. La confección cosida ayuda a mantener los retazos unidos durante el uso.",
-    idealFor: ["Talleres mecánicos", "Fábricas", "Mantenimiento", "Limpieza general"],
-    applications: ["Grasa y aceite", "Maquinaria", "Herramientas", "Superficies de trabajo"],
+      "Pieza formada con retazos textiles unidos mediante costura. Su formato facilita manipular el material como un paño durante tareas repetitivas de limpieza en talleres, mantenimiento, herramientas, piezas y superficies de trabajo.",
+    idealFor: ["Talleres mecánicos", "Áreas de mantenimiento", "Fábricas", "Limpieza general"],
+    applications: ["Grasa y aceite", "Herramientas y piezas", "Maquinaria", "Superficies de trabajo"],
     searchLanguage: ["trapo industrial cosido", "trapo cosido", "trapo cocido", "trapo de limpieza"],
   },
   {
@@ -40,11 +40,11 @@ export const PRODUCTS: Product[] = [
     image: "/img/products/trapo-industrial-cosido-blanco.png",
     price: 3.1,
     summary:
-      "Trapo industrial cosido blanco para limpieza más controlada y trabajos donde conviene visualizar la suciedad.",
+      "Trapo industrial cosido blanco para limpieza general y tareas donde conviene ver con claridad la suciedad retirada.",
     description:
-      "El color blanco facilita observar el nivel de suciedad durante la limpieza y resulta útil cuando se busca evitar la transferencia visual de color del material. Se vende por kilo y puede cotizarse directamente por WhatsApp.",
-    idealFor: ["Mantenimiento", "Limpieza profesional", "Talleres", "Procesos industriales"],
-    applications: ["Superficies", "Secado", "Mantenimiento", "Limpieza de piezas"],
+      "Pieza blanca formada con retazos textiles cosidos. El fondo claro permite observar con mayor facilidad grasa, polvo o residuos durante el uso, por lo que puede ser útil para repaso visual de piezas y superficies.",
+    idealFor: ["Mantenimiento", "Talleres", "Limpieza general", "Revisión visual de suciedad"],
+    applications: ["Piezas y herramientas", "Superficies", "Secado", "Mantenimiento general"],
     searchLanguage: ["trapo blanco industrial", "trapo industrial blanco", "trapo cosido blanco"],
   },
   {
@@ -55,11 +55,11 @@ export const PRODUCTS: Product[] = [
     image: "/img/products/trapo-industrial-suelto-color.png",
     price: 3.1,
     summary:
-      "Trapo suelto de color para limpieza intensiva, derrames, maquinaria y suciedad de trabajo.",
+      "Trapo suelto de color para limpieza general, grasa, aceite y suciedad frecuente de taller o mantenimiento.",
     description:
-      "Retazos textiles sueltos que permiten tomar la cantidad necesaria según la tarea. Es una opción versátil para limpieza de taller, mantenimiento, superficies de trabajo y procesos donde se requiere reemplazar el material con frecuencia.",
-    idealFor: ["Talleres", "Fábricas", "Mantenimiento", "Empresas de limpieza"],
-    applications: ["Derrames", "Grasa y aceite", "Maquinaria", "Limpieza industrial"],
+      "Retazos textiles independientes que pueden tomarse y reemplazarse según avanza el trabajo. El formato suelto resulta práctico cuando se necesita cambiar de paño con frecuencia para limpiar piezas, herramientas, maquinaria o superficies.",
+    idealFor: ["Talleres", "Mantenimiento", "Fábricas", "Limpieza general"],
+    applications: ["Grasa y aceite", "Herramientas y piezas", "Maquinaria", "Derrames y superficies"],
     searchLanguage: ["trapo suelto", "trapo para limpieza", "trapo industrial suelto", "trapo de limpieza"],
   },
   {
@@ -70,11 +70,11 @@ export const PRODUCTS: Product[] = [
     image: "/img/products/trapo-industrial-suelto-blanco.png",
     price: 3.9,
     summary:
-      "Trapo suelto blanco para mantenimiento, secado y limpieza donde conviene controlar visualmente la suciedad.",
+      "Trapo suelto blanco para limpieza, secado y trabajos donde ayuda visualizar el residuo retirado.",
     description:
-      "Una presentación suelta y de color blanco para tareas que requieren seleccionar retazos individualmente. Su formato facilita separar piezas según el trabajo y reemplazarlas conforme se ensucian.",
-    idealFor: ["Limpieza profesional", "Mantenimiento", "Fábricas", "Talleres"],
-    applications: ["Secado", "Superficies", "Piezas", "Limpieza general"],
+      "Retazos blancos independientes para elegir y reemplazar pieza por pieza. El color claro facilita controlar visualmente la suciedad durante el uso sin atribuir al material propiedades especiales que dependan de su composición.",
+    idealFor: ["Mantenimiento", "Talleres", "Limpieza general", "Revisión visual de suciedad"],
+    applications: ["Piezas", "Superficies", "Secado", "Limpieza general"],
     searchLanguage: ["trapo suelto blanco", "trapo blanco para limpieza", "trapo industrial suelto blanco"],
   },
   {
@@ -85,11 +85,11 @@ export const PRODUCTS: Product[] = [
     image: "/img/products/merma-jean.png",
     price: 0.25,
     summary:
-      "Retazos y merma de jean para reaprovechamiento como insumo textil y proyectos de reutilización.",
+      "Retazos y merma de jean para clasificación, reciclaje mecánico y reaprovechamiento como materia prima textil.",
     description:
-      "Material proveniente de saldos o recortes de jean que puede aprovecharse como materia prima en procesos textiles, relleno, clasificación de retazos y proyectos de reutilización. Por tratarse de merma, las características visuales pueden variar según el lote disponible.",
-    idealFor: ["Reutilización textil", "Clasificación de retazos", "Proyectos productivos", "Transformación de material"],
-    applications: ["Materia prima", "Retazos", "Reaprovechamiento", "Proyectos textiles"],
+      "Material proveniente de saldos o recortes de denim. En procesos de reciclaje textil, este tipo de residuo puede clasificarse, cortarse o desfibrarse para recuperar fibra y destinarla a nuevos hilos, no tejidos, rellenos o materiales compuestos según la tecnología del comprador. Las características del lote pueden variar.",
+    idealFor: ["Reciclaje textil", "Clasificación de retazos", "Recuperación de fibra", "Transformación industrial"],
+    applications: ["Materia prima textil", "Desfibrado mecánico", "No tejidos y rellenos", "Materiales reciclados"],
     searchLanguage: ["merma de jean", "retazos de jean", "merma textil", "merma denim"],
   },
   {
@@ -100,11 +100,11 @@ export const PRODUCTS: Product[] = [
     image: "/img/products/trapo-industrial-cosido-manual-color.png",
     price: 2.1,
     summary:
-      "Trapo de color cosido manualmente para trabajos de limpieza exigentes y mantenimiento frecuente.",
+      "Trapo de color cosido manualmente para limpieza general, grasa, aceite y mantenimiento frecuente.",
     description:
-      "Opción cosida manualmente que mantiene unidos los retazos para un manejo cómodo durante tareas de limpieza. Está orientada a usuarios que prefieren una pieza conformada en lugar de material completamente suelto.",
-    idealFor: ["Talleres", "Mantenimiento", "Industria", "Limpieza exigente"],
-    applications: ["Maquinaria", "Herramientas", "Grasa", "Mantenimiento general"],
+      "Retazos unidos manualmente para formar una pieza manejable durante tareas repetitivas. Es una alternativa al material suelto cuando se prefiere trabajar con un paño conformado para herramientas, piezas, superficies y maquinaria.",
+    idealFor: ["Talleres", "Mantenimiento", "Fábricas", "Limpieza general"],
+    applications: ["Grasa y aceite", "Herramientas y piezas", "Maquinaria", "Superficies de trabajo"],
     searchLanguage: ["trapo cosido manual", "trapo industrial cosido", "trapo de limpieza cosido"],
   },
   {
@@ -115,11 +115,11 @@ export const PRODUCTS: Product[] = [
     image: "/img/products/waipe-color.png",
     price: 2.5,
     summary:
-      "Waipe de color para limpieza de aceite, grasa, maquinaria y suciedad de trabajo.",
+      "Waipe de color para limpieza general y retiro de aceite, grasa, lubricantes y suciedad de trabajo.",
     description:
-      "Material textil orientado a tareas de limpieza industrial y mantenimiento. Es una alternativa para talleres y operaciones que necesitan retirar suciedad, lubricantes o residuos de superficies y herramientas.",
-    idealFor: ["Talleres", "Industria", "Mantenimiento", "Limpieza técnica"],
-    applications: ["Aceite", "Grasa", "Herramientas", "Maquinaria"],
+      "Material textil para wipe-down y mantenimiento de piezas, herramientas, maquinaria y superficies. Es una opción habitual en tareas donde se necesita retirar aceites, grasa y residuos de operación.",
+    idealFor: ["Talleres", "Mantenimiento", "Industria", "Limpieza general"],
+    applications: ["Aceite y lubricantes", "Grasa", "Herramientas y piezas", "Maquinaria y superficies"],
     searchLanguage: ["waipe", "waipe industrial", "waipe para limpieza", "waipe color"],
   },
   {
@@ -130,11 +130,11 @@ export const PRODUCTS: Product[] = [
     image: "/img/products/waipe-blanco.png",
     price: 4.3,
     summary:
-      "Waipe blanco para limpieza fina, mantenimiento, pulido y trabajos donde conviene utilizar material claro.",
+      "Waipe blanco para limpieza general y mantenimiento cuando conviene observar con claridad el residuo retirado.",
     description:
-      "Alternativa blanca para procesos de limpieza en los que resulta útil observar residuos o suciedad sobre el material. Se comercializa por kilo y se puede cotizar según cantidad y destino de envío.",
-    idealFor: ["Limpieza fina", "Mantenimiento", "Pulido", "Procesos industriales"],
-    applications: ["Superficies", "Piezas", "Secado", "Acabado"],
+      "Material blanco para wipe-down de piezas y superficies, secado y mantenimiento general. El color claro ayuda a visualizar suciedad o residuos durante el uso; otras propiedades dependen de la composición real del lote.",
+    idealFor: ["Mantenimiento", "Talleres", "Limpieza general", "Revisión visual de suciedad"],
+    applications: ["Piezas y superficies", "Secado", "Aceite y grasa", "Mantenimiento general"],
     searchLanguage: ["waipe blanco", "waipe industrial blanco", "waipe para limpieza"],
   },
 ];
