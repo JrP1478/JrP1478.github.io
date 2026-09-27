@@ -1,0 +1,47 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import ProductCard from "../../../components/ProductCard.astro";
+import Breadcrumbs from "../../../components/Breadcrumbs.astro";
+import { PRODUCTS } from "../../../data/products";
+
+const recommended = PRODUCTS.filter((p) =>
+  ["trapo-industrial-cosido-color", "trapo-industrial-suelto-color", "waipe-color"].includes(p.slug)
+);
+---
+
+<BaseLayout
+  title="Trapos para limpiar grasa y aceite | Biohebra Perú"
+  description="Compara trapo industrial cosido, trapo suelto y waipe de color para tareas con grasa, aceite, maquinaria y herramientas. Precios por kilo."
+>
+  <section class="page-hero">
+    <div class="container">
+      <Breadcrumbs items={[{ label: "Usos" }, { label: "Grasa y aceite" }]} />
+      <div class="page-hero-copy">
+        <span class="eyebrow">Limpieza de trabajo</span>
+        <h1>Trapos para limpiar grasa y aceite</h1>
+        <p class="lead">
+          Si buscas material textil para retirar grasa o aceite de herramientas, maquinaria y
+          superficies de trabajo, compara estas opciones de Biohebra.
+        </p>
+      </div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container">
+      <div class="product-grid">
+        {recommended.map((product) => <ProductCard product={product} />)}
+      </div>
+    </div>
+  </section>
+  <section class="section section-soft">
+    <div class="container rich-copy">
+      <h2>No existe una sola presentación para todos los trabajos</h2>
+      <p>
+        La elección depende de la cantidad de suciedad, la superficie y la frecuencia con la que
+        necesitas cambiar el material. Para trabajos donde reemplazas retazos constantemente,
+        compara trapo suelto; si prefieres una pieza unida, revisa el cosido. El waipe es otra
+        alternativa habitual para limpieza y mantenimiento.
+      </p>
+    </div>
+  </section>
+</BaseLayout>

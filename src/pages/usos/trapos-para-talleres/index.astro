@@ -1,0 +1,53 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import ProductCard from "../../../components/ProductCard.astro";
+import Breadcrumbs from "../../../components/Breadcrumbs.astro";
+import { PRODUCTS } from "../../../data/products";
+
+const recommended = PRODUCTS.filter((p) =>
+  ["trapo-industrial-cosido-color", "trapo-industrial-suelto-color", "waipe-color"].includes(p.slug)
+);
+---
+
+<BaseLayout
+  title="Trapos para talleres mecánicos: grasa, aceite y mantenimiento | Biohebra"
+  description="Opciones de trapo industrial y waipe para talleres mecánicos, limpieza de grasa, aceite, herramientas y mantenimiento. Compara precios por kilo."
+>
+  <section class="page-hero">
+    <div class="container">
+      <Breadcrumbs items={[{ label: "Usos" }, { label: "Trapos para talleres" }]} />
+      <div class="page-hero-copy">
+        <span class="eyebrow">Guía de uso</span>
+        <h1>Trapos para talleres mecánicos</h1>
+        <p class="lead">
+          Para limpieza de grasa, aceite, herramientas, piezas y superficies de trabajo, conviene
+          elegir el formato según la frecuencia de cambio y la forma en que manipulas el material.
+        </p>
+      </div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container">
+      <div class="section-heading">
+        <h2>Opciones recomendadas para comparar</h2>
+        <p class="lead">
+          Estas alternativas del catálogo se orientan a limpieza general y suciedad habitual de taller.
+        </p>
+      </div>
+      <div class="product-grid">
+        {recommended.map((product) => <ProductCard product={product} />)}
+      </div>
+    </div>
+  </section>
+  <section class="section section-soft">
+    <div class="container rich-copy">
+      <h2>Qué considerar al elegir</h2>
+      <ul>
+        <li>Tipo de suciedad: grasa, aceite, polvo o residuos generales.</li>
+        <li>Si prefieres retazos sueltos o una pieza cosida.</li>
+        <li>La frecuencia con la que necesitas reemplazar el material.</li>
+        <li>Si te conviene material color o blanco para visualizar la suciedad.</li>
+      </ul>
+    </div>
+  </section>
+</BaseLayout>

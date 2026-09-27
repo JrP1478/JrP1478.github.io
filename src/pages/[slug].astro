@@ -1,0 +1,190 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
+import ProductCard from "../components/ProductCard.astro";
+import { PRODUCTS, productPrice, productWhatsApp, productRoute } from "../data/products";
+import { SITE } from "../data/site";
+
+export function getStaticPaths() {
+  return PRODUCTS.filter((product) => product.slug !== "merma-de-jean").map((product) => ({
+    params: { slug: product.slug },
+    props: { product },
+  }));
+}
+
+const { product } = Astro.props;
+const categoryHref =
+  product.category === "suelto"
+    ? "/trapo-industrial-suelto/"
+    : product.category === "cosido"
+      ? "/trapo-industrial-cosido/"
+      : "/waipe-industrial/";
+const categoryLabel =
+  product.category === "suelto"
+    ? "Trapo suelto"
+    : product.category === "cosido"
+      ? "Trapo cosido"
+      : "Waipe industrial";
+
+const related = PRODUCTS.filter(
+  (candidate) => candidate.category === product.category && candidate.slug !== product.slug
+).slice(0, 3);
+
+const title = product.name + " por kilo | Biohebra Perú";
+const description =
+  product.summary +
+  " Precio " +
+  productPrice(product) +
+  ". Consulta disponibilidad y envío a todo el Perú.";
+
+const productSchema = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  name: product.name,
+  image: new URL(product.image, SITE.domain).toString(),
+  description: product.summary,
+  brand: { "@type": "Brand", name: "Biohebra" },
+  offers: {
+    "@type": "Offer",
+    priceCurrency: "PEN",
+    price: product.price.toFixed(2),
+    url: new URL(productRoute(product), SITE.domain).toString(),
+    availability: "https://schema.org/InStock",
+    seller: { "@type": "Organization", name: "Biohebra" },
+  },
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "¿Cuál es el precio de " + product.name + "?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "El precio publicado es " + productPrice(product) + ". Confirma disponibilidad y condiciones de envío antes de comprar.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "¿Biohebra realiza envíos?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Biohebra coordina envíos a diferentes regiones del Perú según cantidad, destino y disponibilidad.",
+      },
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  image={product.image}
+  canonicalPath={productRoute(product)}
+  pageType="product"
+  jsonLd={[productSchema, faqSchema]}
+>
+  <section class="product-detail-hero">
+    <div class="container">
+      <Breadcrumbs items={[{ label: categoryLabel, href: categoryHref }, { label: product.name }]} />
+      <div class="product-detail-grid">
+        <div class="product-detail-image">
+          <img src={product.image} alt={product.name} width="760" height="760" />
+        </div>
+        <div class="product-detail-copy">
+          <span class="eyebrow">{categoryLabel} · {product.variant}</span>
+          <h1>{product.name}</h1>
+          <p class="product-price">{productPrice(product)}</p>
+          <p class="lead">{product.summary}</p>
+          <div class="tag-list">
+            {product.applications.map((item) => <span class="tag">{item}</span>)}
+          </div>
+          <a class="button button-primary" href={productWhatsApp(product)} target="_blank" rel="noopener noreferrer">
+            Cotizar este producto
+          </a>
+          <p class="product-note">
+            Precio publicado por kilo. Confirma disponibilidad, cantidad mínima aplicable y costo
+            de envío antes de realizar el pedido.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-soft">
+    <div class="container">
+      <div class="info-columns">
+        <article class="info-box">
+          <h2>Descripción</h2>
+          <p>{product.description}</p>
+        </article>
+        <article class="info-box">
+          <h2>Ideal para</h2>
+          <ul>{product.idealFor.map((item) => <li>{item}</li>)}</ul>
+        </article>
+        <article class="info-box">
+          <h2>Aplicaciones</h2>
+          <ul>{product.applications.map((item) => <li>{item}</li>)}</ul>
+        </article>
+        <article class="info-box">
+          <h2>Antes de comprar</h2>
+          <ul>
+            <li>Indica la cantidad que necesitas.</li>
+            <li>Confirma disponibilidad del producto.</li>
+            <li>Indica tu distrito o ciudad de destino.</li>
+            <li>Consulta condiciones y costo de envío.</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-heading">
+        <span class="eyebrow">Preguntas frecuentes</span>
+        <h2>Lo que conviene saber antes de cotizar</h2>
+      </div>
+      <div class="faq-list">
+        <details>
+          <summary>¿Cuál es el precio de {product.name}?</summary>
+          <p>
+            El precio publicado es <strong>{productPrice(product)}</strong>. Escríbenos para
+            confirmar disponibilidad y condiciones del pedido.
+          </p>
+        </details>
+        <details>
+          <summary>¿Puedo pedir envío fuera de Lima?</summary>
+          <p>
+            Sí. Biohebra coordina envíos a diferentes regiones del Perú. El costo y la modalidad
+            dependen de la cantidad y del destino.
+          </p>
+        </details>
+        <details>
+          <summary>¿Cómo sé si este producto me sirve?</summary>
+          <p>
+            Indícanos qué necesitas limpiar o para qué proceso utilizarás el material. Podemos
+            orientarte entre las presentaciones del catálogo sin sustituir las pruebas que tu
+            proceso técnico requiera.
+          </p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  {related.length > 0 && (
+    <section class="section section-soft">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">También puedes comparar</span>
+          <h2>Productos relacionados</h2>
+        </div>
+        <div class="product-grid">
+          {related.map((candidate) => <ProductCard product={candidate} />)}
+        </div>
+      </div>
+    </section>
+  )}
+</BaseLayout>

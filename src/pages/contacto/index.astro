@@ -1,0 +1,73 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import { SITE, whatsappLink } from "../../data/site";
+---
+
+<BaseLayout
+  title="Contacto y cotizaciones | Biohebra Perú"
+  description="Contacta a Biohebra para cotizar trapo industrial, waipe y merma de jean. WhatsApp, correo, horarios, RUC y ubicación en Lima."
+>
+  <section class="page-hero">
+    <div class="container">
+      <Breadcrumbs items={[{ label: "Contacto" }]} />
+      <div class="page-hero-copy">
+        <span class="eyebrow">Cotizaciones Biohebra</span>
+        <h1>¿Qué producto y cantidad necesitas?</h1>
+        <p class="lead">
+          Escríbenos por WhatsApp con el producto, cantidad aproximada y destino. Confirmaremos
+          disponibilidad y condiciones de envío.
+        </p>
+        <div class="hero-actions">
+          <a class="button button-primary" href={whatsappLink()} target="_blank" rel="noopener noreferrer">
+            Escribir por WhatsApp
+          </a>
+          <a class="button button-secondary" href={"mailto:" + SITE.email}>Enviar correo</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container contact-grid">
+      <div class="contact-card">
+        <h2>Datos de contacto</h2>
+        <div class="contact-list">
+          <div class="contact-item">
+            <small>WhatsApp</small>
+            <a href={whatsappLink()} target="_blank" rel="noopener noreferrer">{SITE.phoneDisplay}</a>
+          </div>
+          <div class="contact-item">
+            <small>Correo</small>
+            <a href={"mailto:" + SITE.email}>{SITE.email}</a>
+          </div>
+          <div class="contact-item">
+            <small>RUC</small>
+            <strong>{SITE.ruc}</strong>
+          </div>
+          <div class="contact-item">
+            <small>Horario</small>
+            <strong>{SITE.scheduleWeek}<br />{SITE.scheduleSaturday}</strong>
+          </div>
+          <div class="contact-item">
+            <small>Ubicación</small>
+            <strong>{SITE.location}</strong>
+          </div>
+          <div class="contact-item">
+            <small>Redes</small>
+            <a href={SITE.facebook} target="_blank" rel="noopener noreferrer">Facebook</a>
+            <a href={SITE.tiktok} target="_blank" rel="noopener noreferrer">TikTok</a>
+          </div>
+        </div>
+      </div>
+
+      <iframe
+        class="map-frame"
+        src={SITE.mapEmbed}
+        loading="lazy"
+        title="Ubicación de Biohebra"
+        referrerpolicy="no-referrer-when-downgrade"
+      ></iframe>
+    </div>
+  </section>
+</BaseLayout>

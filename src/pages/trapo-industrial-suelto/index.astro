@@ -1,0 +1,66 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import ProductCard from "../../components/ProductCard.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import { productsByCategory } from "../../data/products";
+import { whatsappLink } from "../../data/site";
+
+const products = productsByCategory("suelto");
+---
+
+<BaseLayout
+  title="Trapo suelto para limpieza: color y blanco por kilo | Biohebra"
+  description="Venta de trapo industrial suelto en color y blanco. Compara precios por kilo, usos para limpieza, mantenimiento, talleres y fábricas. Envíos a todo el Perú."
+>
+  <section class="page-hero">
+    <div class="container">
+      <Breadcrumbs items={[{ label: "Trapo industrial", href: "/trapo-industrial/" }, { label: "Trapo suelto" }]} />
+      <div class="page-hero-grid">
+        <div class="page-hero-copy">
+          <span class="eyebrow">Trapo para limpieza</span>
+          <h1>Trapo industrial suelto</h1>
+          <p class="lead">
+            Retazos textiles sueltos para limpieza general, mantenimiento, maquinaria, grasa,
+            aceite y tareas donde conviene tomar el material pieza por pieza.
+          </p>
+          <a class="button button-primary" href={whatsappLink("Hola, quiero cotizar trapo suelto. ¿Me confirman disponibilidad en color y blanco?")} target="_blank" rel="noopener noreferrer">
+            Cotizar trapo suelto
+          </a>
+        </div>
+        <aside class="page-hero-card">
+          <h2>Dos opciones</h2>
+          <ul>
+            <li>Trapo Industrial suelto - color: S/ 3.10 por kilo.</li>
+            <li>Trapo Industrial suelto - blanco: S/ 3.90 por kilo.</li>
+            <li>Consulta cantidad disponible y despacho por WhatsApp.</li>
+          </ul>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="product-grid">
+        {products.map((product) => <ProductCard product={product} />)}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-soft">
+    <div class="container rich-copy">
+      <h2>¿Para qué sirve el trapo suelto?</h2>
+      <p>
+        Su formato permite seleccionar retazos individualmente y reemplazarlos a medida que se
+        ensucian. Es una presentación versátil para talleres, mantenimiento, fábricas y servicios
+        de limpieza.
+      </p>
+      <h2>Trapo suelto de color o blanco</h2>
+      <p>
+        Elige según tu tarea. Las opciones de color se orientan a limpieza general y suciedad de
+        trabajo; el blanco es útil cuando quieres observar con mayor facilidad el residuo que el
+        material va retirando.
+      </p>
+    </div>
+  </section>
+</BaseLayout>

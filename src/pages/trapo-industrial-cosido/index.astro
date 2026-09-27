@@ -1,0 +1,64 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import ProductCard from "../../components/ProductCard.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import { productsByCategory } from "../../data/products";
+import { whatsappLink } from "../../data/site";
+
+const products = productsByCategory("cosido");
+---
+
+<BaseLayout
+  title="Trapo cosido industrial por kilo: color y blanco | Biohebra"
+  description="Venta de trapo industrial cosido en color, blanco y cosido manualmente. Revisa precios por kilo para limpieza, talleres, fábricas y mantenimiento."
+>
+  <section class="page-hero">
+    <div class="container">
+      <Breadcrumbs items={[{ label: "Trapo industrial", href: "/trapo-industrial/" }, { label: "Trapo cosido" }]} />
+      <div class="page-hero-grid">
+        <div class="page-hero-copy">
+          <span class="eyebrow">Trapo conformado</span>
+          <h1>Trapo industrial cosido</h1>
+          <p class="lead">
+            Piezas textiles formadas a partir de retazos unidos, pensadas para un manejo cómodo en
+            limpieza de talleres, maquinaria, herramientas y mantenimiento.
+          </p>
+          <a class="button button-primary" href={whatsappLink("Hola, quiero cotizar trapo cosido. ¿Me confirman las opciones y disponibilidad?")} target="_blank" rel="noopener noreferrer">
+            Cotizar trapo cosido
+          </a>
+        </div>
+        <aside class="page-hero-card">
+          <h2>Opciones Biohebra</h2>
+          <ul>
+            <li>Cosido - color: S/ 1.90 por kilo.</li>
+            <li>Cosido - blanco: S/ 3.10 por kilo.</li>
+            <li>Cosido manualmente - color: S/ 2.10 por kilo.</li>
+          </ul>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="product-grid">
+        {products.map((product) => <ProductCard product={product} />)}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-soft">
+    <div class="container rich-copy">
+      <h2>¿Qué significa trapo cosido?</h2>
+      <p>
+        A diferencia del trapo completamente suelto, esta presentación une retazos para formar una
+        pieza más estable durante el uso. Puede ser útil cuando buscas manipular el material como un
+        paño en tareas repetitivas.
+      </p>
+      <p>
+        Algunas personas escriben “trapo cocido” al buscar este producto. En Biohebra utilizamos
+        “trapo cosido”, que describe correctamente la presentación unida mediante costura.
+      </p>
+    </div>
+  </section>
+</BaseLayout>
