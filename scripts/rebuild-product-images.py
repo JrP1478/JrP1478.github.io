@@ -6,7 +6,7 @@ from PIL import Image, ImageEnhance, ImageFilter
 
 ROOT = Path(__file__).resolve().parents[1]
 PRODUCT_DIR = ROOT / "public" / "img" / "products"
-MODEL = ROOT / ".cache" / "EDSR_x4.pb"
+MODEL = ROOT / ".cache" / "FSRCNN_x4.pb"
 SOURCE_COMMIT = "41a2de63dfe869e48b8cc74c38d48a6014e425a4"
 
 FILES = [
@@ -94,7 +94,7 @@ def main():
     PRODUCT_DIR.mkdir(parents=True, exist_ok=True)
     sr = cv2.dnn_superres.DnnSuperResImpl_create()
     sr.readModel(str(MODEL))
-    sr.setModel("edsr", 4)
+    sr.setModel("fsrcnn", 4)
 
     for filename in FILES:
         source = PRODUCT_DIR / filename
