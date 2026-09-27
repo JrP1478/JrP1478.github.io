@@ -1,4 +1,4 @@
-name: Validate site
+name: Validate and deploy site
 
 on:
   pull_request:
@@ -7,6 +7,7 @@ on:
   push:
     branches:
       - redesign-2026
+      - main
 
 permissions:
   contents: write
@@ -26,13 +27,15 @@ jobs:
           node-version: 22
 
       - name: Recreate product images
-        if: github.event_name == 'push' && contains(github.event.head_commit.message, '[rebuild-product-images]')
+        if: github.event_name == 'push' && github.ref_name == 'redesign-2026' && contains(github.event.head_commit.message, '[rebuild-product-images]')
         shell: bash
         run: |
           python3 -m pip install --upgrade pip
           python3 -m pip install "opencv-contrib-python-headless==4.10.0.84" "Pillow>=10.4,<12"
           mkdir -p .cache
-          curl -L --fail --retry 3             -o .cache/FSRCNN_x4.pb             https://github.com/Saafke/FSRCNN_Tensorflow/raw/master/models/FSRCNN_x4.pb
+          curl -L --fail --retry 3 \
+            -o .cache/FSRCNN_x4.pb \
+            https://github.com/Saafke/FSRCNN_Tensorflow/raw/master/models/FSRCNN_x4.pb
           python3 scripts/rebuild-product-images.py
 
       - name: Install dependencies
@@ -42,7 +45,7 @@ jobs:
         run: npm run build
 
       - name: Commit recreated product images
-        if: github.event_name == 'push' && contains(github.event.head_commit.message, '[rebuild-product-images]')
+        if: github.event_name == 'push' && github.ref_name == 'redesign-2026' && contains(github.event.head_commit.message, '[rebuild-product-images]')
         shell: bash
         run: |
           git config user.name "github-actions[bot]"
@@ -54,3 +57,11 @@ jobs:
           fi
           git commit -m "Actualiza imágenes reconstruidas de productos [skip ci]"
           git push origin HEAD:${GITHUB_REF_NAME}
+
+      - name: Deploy to gh-pages
+        if: github.event_name == 'push' && github.ref_name == 'main'
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          npx gh-pages -d dist -b gh-pages
