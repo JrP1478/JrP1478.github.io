@@ -2,6 +2,7 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Breadcrumbs from "../../components/Breadcrumbs.astro";
 import { SITE, whatsappLink } from "../../data/site";
+import SocialIcon from "../../components/SocialIcon.astro";
 ---
 
 <BaseLayout
@@ -54,9 +55,17 @@ import { SITE, whatsappLink } from "../../data/site";
             <strong>{SITE.location}</strong>
           </div>
           <div class="contact-item">
-            <small>Redes</small>
-            <a href={SITE.facebook} target="_blank" rel="noopener noreferrer">Facebook</a>
-            <a href={SITE.tiktok} target="_blank" rel="noopener noreferrer">TikTok</a>
+            <small>Redes sociales</small>
+            <div class="contact-social">
+              <a class="social-link" href={SITE.facebook} target="_blank" rel="noopener noreferrer" aria-label="Biohebra en Facebook">
+                <span class="social-icon"><SocialIcon name="facebook" /></span>
+                <span>Facebook</span>
+              </a>
+              <a class="social-link" href={SITE.tiktok} target="_blank" rel="noopener noreferrer" aria-label="Biohebra en TikTok">
+                <span class="social-icon"><SocialIcon name="tiktok" /></span>
+                <span>TikTok</span>
+              </a>
+            </div>
           </div>
         </div>
       </div>

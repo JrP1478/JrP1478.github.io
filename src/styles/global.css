@@ -1403,3 +1403,65 @@ p {
 .section-green .process-card p {
   color: var(--muted);
 }
+
+
+/* Social networks */
+.social-link {
+  display: inline-flex !important;
+  align-items: center;
+  gap: 9px;
+  width: fit-content;
+  font-weight: 700;
+}
+
+.social-icon {
+  width: 34px;
+  height: 34px;
+  flex: 0 0 34px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  color: var(--white);
+  background: var(--green-800);
+  transition: transform 180ms ease, background 180ms ease;
+}
+
+.social-icon svg {
+  width: 19px;
+  height: 19px;
+}
+
+.social-link:hover .social-icon {
+  transform: translateY(-2px);
+  background: var(--green-950);
+}
+
+.contact-social {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 18px;
+  margin-top: 7px;
+}
+
+.footer-social {
+  display: grid;
+  gap: 7px;
+  margin-top: 10px;
+}
+
+.site-footer .social-link-footer {
+  display: flex !important;
+  align-items: center;
+  gap: 9px;
+  margin: 7px 0;
+}
+
+.site-footer .social-link-footer .social-icon {
+  border-color: rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.09);
+}
+
+.site-footer .social-link-footer:hover .social-icon {
+  background: var(--green-700);
+}

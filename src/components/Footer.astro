@@ -1,5 +1,6 @@
 ---
 import { SITE, whatsappLink } from "../data/site";
+import SocialIcon from "./SocialIcon.astro";
 ---
 
 <footer class="site-footer">
@@ -39,9 +40,15 @@ import { SITE, whatsappLink } from "../data/site";
       <p>RUC {SITE.ruc}</p>
       <p>{SITE.location}</p>
       <a href={"mailto:" + SITE.email}>{SITE.email}</a>
-      <div class="footer-social">
-        <a href={SITE.facebook} target="_blank" rel="noopener noreferrer">Facebook</a>
-        <a href={SITE.tiktok} target="_blank" rel="noopener noreferrer">TikTok</a>
+      <div class="footer-social" aria-label="Redes sociales">
+        <a class="social-link social-link-footer" href={SITE.facebook} target="_blank" rel="noopener noreferrer" aria-label="Biohebra en Facebook">
+          <span class="social-icon"><SocialIcon name="facebook" /></span>
+          <span>Facebook</span>
+        </a>
+        <a class="social-link social-link-footer" href={SITE.tiktok} target="_blank" rel="noopener noreferrer" aria-label="Biohebra en TikTok">
+          <span class="social-icon"><SocialIcon name="tiktok" /></span>
+          <span>TikTok</span>
+        </a>
       </div>
     </div>
   </div>
