@@ -103,7 +103,7 @@ La fuente de verdad del catálogo está en src/data/products.ts.
 | Merma de jean | S/ 0.25 por kilo |
 | Trapo Industrial cosido manualmente - color | S/ 2.10 por kilo |
 | Waipe - color | S/ 2.50 por kilo |
-| Waipe - blanco | S/ 4.30 por kilo |
+| Waipe - blanco | S/ 4.50 por kilo |
 
 Estos precios fueron recuperados del último build publicado previo al rediseño. Antes de cambiar un precio en producción, validar que siga vigente.
 
