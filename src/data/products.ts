@@ -128,7 +128,7 @@ export const PRODUCTS: Product[] = [
     category: "waipe",
     variant: "Blanco",
     image: "/img/products/waipe-blanco.webp",
-    price: 4.3,
+    price: 4.5,
     summary:
       "Waipe blanco para limpieza general y mantenimiento cuando conviene observar con claridad el residuo retirado.",
     description:
