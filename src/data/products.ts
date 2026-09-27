@@ -27,7 +27,7 @@ export const PRODUCTS: Product[] = [
     summary:
       "Trapo cosido de color para grasa, aceite, lubricantes y limpieza de trabajo en talleres y mantenimiento.",
     description:
-      "Pieza formada con retazos textiles unidos mediante costura. Su formato conformado facilita manipular el material como un paño durante tareas repetitivas con grasa, aceite y suciedad de trabajo en herramientas, piezas, maquinaria y superficies."
+      "Pieza formada con retazos textiles unidos mediante costura. Su formato conformado facilita manipular el material como un paño durante tareas repetitivas con grasa, aceite y suciedad de trabajo en herramientas, piezas, maquinaria y superficies.",
     idealFor: ["Talleres mecánicos", "Áreas de mantenimiento", "Fábricas", "Limpieza general"],
     applications: ["Grasa y aceite", "Herramientas y piezas", "Maquinaria", "Superficies de trabajo"],
     searchLanguage: ["trapo industrial cosido", "trapo cosido", "trapo cocido", "trapo de limpieza"],
@@ -40,7 +40,7 @@ export const PRODUCTS: Product[] = [
     image: "/img/products/trapo-industrial-cosido-blanco.png",
     price: 3.1,
     summary:
-      "Trapo industrial cosido blanco para grasa, aceite y limpieza donde conviene ver con claridad el residuo retirado."
+      "Trapo industrial cosido blanco para grasa, aceite y limpieza donde conviene ver con claridad el residuo retirado.",
     description:
       "Pieza blanca formada con retazos textiles cosidos. El fondo claro permite observar con mayor facilidad grasa, polvo o residuos durante el uso, por lo que puede ser útil para repaso visual de piezas y superficies.",
     idealFor: ["Mantenimiento", "Talleres", "Limpieza general", "Revisión visual de suciedad"],
