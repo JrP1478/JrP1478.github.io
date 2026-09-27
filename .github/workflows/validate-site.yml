@@ -32,7 +32,7 @@ jobs:
           python3 -m pip install --upgrade pip
           python3 -m pip install "opencv-contrib-python-headless==4.10.0.84" "Pillow>=10.4,<12"
           mkdir -p .cache
-          curl -L --fail --retry 3             -o .cache/FSRCNN_x4.pb             https://github.com/Saafke/EDSR_Tensorflow/raw/master/models/EDSR_x4.pb
+          curl -L --fail --retry 3             -o .cache/FSRCNN_x4.pb             https://github.com/Saafke/FSRCNN_Tensorflow/raw/master/models/FSRCNN_x4.pb
           python3 scripts/rebuild-product-images.py
 
       - name: Install dependencies
