@@ -39,8 +39,8 @@ def neural_upscale(image: Image.Image, sr):
         image = image.crop(bbox)
 
     max_side = max(image.size)
-    if max_side > 720:
-        ratio = 720 / max_side
+    if max_side > 400:
+        ratio = 400 / max_side
         image = image.resize(
             (max(1, round(image.width * ratio)), max(1, round(image.height * ratio))),
             Image.Resampling.LANCZOS,
