@@ -197,3 +197,14 @@ gh-pages
     ↓
 biohebra.uk
 ~~~
+
+
+## Renderizado de imágenes de producto
+
+Las imágenes de producto se pueden normalizar a 1600 × 1200 px con reescalado Lanczos, enfoque controlado y ajustes de luminosidad mediante:
+
+~~~bash
+npm run render:products
+~~~
+
+Los archivos de Waipe reciben una corrección adicional de luminosidad para evitar que se vean opacos en tarjetas y fichas de producto.
