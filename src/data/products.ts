@@ -25,9 +25,9 @@ export const PRODUCTS: Product[] = [
     image: "/img/products/trapo-industrial-cosido-color.png",
     price: 1.9,
     summary:
-      "Trapo cosido de color para limpieza general y retiro de grasa, aceite o suciedad de trabajo.",
+      "Trapo cosido de color para grasa, aceite, lubricantes y limpieza de trabajo en talleres y mantenimiento.",
     description:
-      "Pieza formada con retazos textiles unidos mediante costura. Su formato facilita manipular el material como un paño durante tareas repetitivas de limpieza en talleres, mantenimiento, herramientas, piezas y superficies de trabajo.",
+      "Pieza formada con retazos textiles unidos mediante costura. Su formato conformado facilita manipular el material como un paño durante tareas repetitivas con grasa, aceite y suciedad de trabajo en herramientas, piezas, maquinaria y superficies."
     idealFor: ["Talleres mecánicos", "Áreas de mantenimiento", "Fábricas", "Limpieza general"],
     applications: ["Grasa y aceite", "Herramientas y piezas", "Maquinaria", "Superficies de trabajo"],
     searchLanguage: ["trapo industrial cosido", "trapo cosido", "trapo cocido", "trapo de limpieza"],
@@ -40,7 +40,7 @@ export const PRODUCTS: Product[] = [
     image: "/img/products/trapo-industrial-cosido-blanco.png",
     price: 3.1,
     summary:
-      "Trapo industrial cosido blanco para limpieza general y tareas donde conviene ver con claridad la suciedad retirada.",
+      "Trapo industrial cosido blanco para grasa, aceite y limpieza donde conviene ver con claridad el residuo retirado."
     description:
       "Pieza blanca formada con retazos textiles cosidos. El fondo claro permite observar con mayor facilidad grasa, polvo o residuos durante el uso, por lo que puede ser útil para repaso visual de piezas y superficies.",
     idealFor: ["Mantenimiento", "Talleres", "Limpieza general", "Revisión visual de suciedad"],
@@ -55,11 +55,11 @@ export const PRODUCTS: Product[] = [
     image: "/img/products/trapo-industrial-suelto-color.png",
     price: 3.1,
     summary:
-      "Trapo suelto de color para limpieza general, grasa, aceite y suciedad frecuente de taller o mantenimiento.",
+      "Trapo suelto de color para limpieza general, piezas, maquinaria y trabajos con recambio frecuente de material.",
     description:
-      "Retazos textiles independientes que pueden tomarse y reemplazarse según avanza el trabajo. El formato suelto resulta práctico cuando se necesita cambiar de paño con frecuencia para limpiar piezas, herramientas, maquinaria o superficies.",
+      "Retazos textiles independientes que pueden tomarse y reemplazarse según avanza el trabajo. El formato suelto resulta práctico para limpieza general de piezas, herramientas, maquinaria y superficies cuando se necesita cambiar de paño con frecuencia.",
     idealFor: ["Talleres", "Mantenimiento", "Fábricas", "Limpieza general"],
-    applications: ["Grasa y aceite", "Herramientas y piezas", "Maquinaria", "Derrames y superficies"],
+    applications: ["Limpieza general", "Herramientas y piezas", "Maquinaria", "Superficies de trabajo"],
     searchLanguage: ["trapo suelto", "trapo para limpieza", "trapo industrial suelto", "trapo de limpieza"],
   },
   {
@@ -70,11 +70,11 @@ export const PRODUCTS: Product[] = [
     image: "/img/products/trapo-industrial-suelto-blanco.png",
     price: 3.9,
     summary:
-      "Trapo suelto blanco para limpieza, secado y trabajos donde ayuda visualizar el residuo retirado.",
+      "Trapo suelto blanco para limpieza general, piezas y superficies cuando conviene visualizar el residuo retirado.",
     description:
-      "Retazos blancos independientes para elegir y reemplazar pieza por pieza. El color claro facilita controlar visualmente la suciedad durante el uso sin atribuir al material propiedades especiales que dependan de su composición.",
+      "Retazos blancos independientes para elegir y reemplazar pieza por pieza. Su formato es práctico para limpieza general y recambio frecuente; el color claro facilita controlar visualmente la suciedad durante el uso.",
     idealFor: ["Mantenimiento", "Talleres", "Limpieza general", "Revisión visual de suciedad"],
-    applications: ["Piezas", "Superficies", "Secado", "Limpieza general"],
+    applications: ["Piezas y herramientas", "Superficies", "Secado", "Limpieza general"],
     searchLanguage: ["trapo suelto blanco", "trapo blanco para limpieza", "trapo industrial suelto blanco"],
   },
   {

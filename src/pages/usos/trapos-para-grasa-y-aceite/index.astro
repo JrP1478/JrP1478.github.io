@@ -4,14 +4,21 @@ import ProductCard from "../../../components/ProductCard.astro";
 import Breadcrumbs from "../../../components/Breadcrumbs.astro";
 import { PRODUCTS } from "../../../data/products";
 
-const recommended = PRODUCTS.filter((p) =>
-  ["trapo-industrial-cosido-color", "trapo-industrial-suelto-color", "waipe-color", "waipe-blanco"].includes(p.slug)
-);
+const recommendedSlugs = [
+  "trapo-industrial-cosido-color",
+  "trapo-industrial-cosido-blanco",
+  "waipe-color",
+  "trapo-industrial-suelto-color",
+];
+
+const recommended = recommendedSlugs
+  .map((slug) => PRODUCTS.find((product) => product.slug === slug))
+  .filter((product): product is (typeof PRODUCTS)[number] => Boolean(product));
 ---
 
 <BaseLayout
   title="Trapos para limpiar grasa y aceite | Biohebra Perú"
-  description="Compara trapo industrial cosido, trapo suelto y waipe para retirar grasa, aceite y lubricantes de piezas, herramientas, maquinaria y superficies."
+  description="Para grasa y aceite, Biohebra prioriza trapo industrial cosido y también ofrece waipe y trapo suelto según el tipo de limpieza. Compara precios por kilo."
 >
   <section class="page-hero">
     <div class="container">
@@ -20,9 +27,10 @@ const recommended = PRODUCTS.filter((p) =>
         <span class="eyebrow">Limpieza de trabajo</span>
         <h1>Trapos para limpiar grasa y aceite</h1>
         <p class="lead">
-          Los paños y wipers industriales se utilizan habitualmente para retirar aceite, grasa,
-          lubricantes y suciedad de piezas, herramientas, equipos y superficies. La elección depende
-          de la cantidad de residuo y de cómo necesitas manipular o reemplazar el material.
+          Para trabajos con grasa, aceite y lubricantes, en Biohebra priorizamos el
+          <strong>trapo industrial cosido</strong> cuando se busca una pieza más conformada y
+          cómoda de manipular durante la limpieza. El trapo suelto sigue siendo una alternativa
+          útil para limpieza general y tareas donde conviene reemplazar el material con frecuencia.
         </p>
       </div>
     </div>
@@ -40,16 +48,17 @@ const recommended = PRODUCTS.filter((p) =>
     <div class="container rich-copy">
       <h2>Cómo comparar las presentaciones</h2>
       <ul>
-        <li><strong>Trapo suelto:</strong> práctico cuando el trabajo exige reemplazar retazos continuamente.</li>
-        <li><strong>Trapo cosido:</strong> ofrece una pieza conformada para tareas repetitivas.</li>
-        <li><strong>Waipe:</strong> alternativa para wipe-down de piezas, herramientas y superficies.</li>
-        <li><strong>Color:</strong> las manchas de grasa y aceite resultan visualmente menos evidentes durante el trabajo.</li>
-        <li><strong>Blanco:</strong> facilita observar la suciedad o residuo que se está retirando.</li>
+        <li><strong>Trapo cosido:</strong> nuestra primera opción para grasa, aceite y lubricantes cuando se busca una pieza más estable, con mejor cuerpo y fácil manipulación durante tareas repetitivas.</li>
+        <li><strong>Waipe:</strong> alternativa práctica para limpiar piezas, herramientas, superficies y equipos con suciedad de operación.</li>
+        <li><strong>Trapo suelto:</strong> útil para limpieza general y trabajos donde se necesita tomar retazos individuales y cambiarlos con frecuencia.</li>
+        <li><strong>Color:</strong> práctico para suciedad de trabajo porque las manchas de grasa y aceite son menos visibles durante el uso.</li>
+        <li><strong>Blanco:</strong> facilita observar la suciedad o residuo que se va retirando.</li>
       </ul>
-      <h2>Antes de usar químicos</h2>
+      <h2>La absorción depende del material</h2>
       <p>
-        La compatibilidad con solventes, desengrasantes u otros químicos depende de la composición
-        real del material. Confirma ese uso antes de adoptarlo en un proceso técnico.
+        La capacidad real de absorción depende de la composición, el espesor y el tipo de tejido
+        del lote. Si el trabajo exige absorber grandes cantidades de líquido o usar solventes y
+        desengrasantes, confirma primero que la presentación disponible sea adecuada para tu proceso.
       </p>
     </div>
   </section>
