@@ -22,7 +22,7 @@ export const PRODUCTS: Product[] = [
     name: "Trapo Industrial cosido - color",
     category: "cosido",
     variant: "Color",
-    image: "/img/products/trapo-industrial-cosido-color.png",
+    image: "/img/products/trapo-industrial-cosido-color.webp",
     price: 1.9,
     summary:
       "Trapo cosido de color para grasa, aceite, lubricantes y limpieza de trabajo en talleres y mantenimiento.",
@@ -37,7 +37,7 @@ export const PRODUCTS: Product[] = [
     name: "Trapo Industrial cosido - blanco",
     category: "cosido",
     variant: "Blanco",
-    image: "/img/products/trapo-industrial-cosido-blanco.png",
+    image: "/img/products/trapo-industrial-cosido-blanco.webp",
     price: 3.1,
     summary:
       "Trapo industrial cosido blanco para grasa, aceite y limpieza donde conviene ver con claridad el residuo retirado.",
@@ -52,7 +52,7 @@ export const PRODUCTS: Product[] = [
     name: "Trapo Industrial suelto - color",
     category: "suelto",
     variant: "Color",
-    image: "/img/products/trapo-industrial-suelto-color.png",
+    image: "/img/products/trapo-industrial-suelto-color.webp",
     price: 3.1,
     summary:
       "Trapo suelto de color para limpieza general, piezas, maquinaria y trabajos con recambio frecuente de material.",
@@ -67,7 +67,7 @@ export const PRODUCTS: Product[] = [
     name: "Trapo Industrial suelto - blanco",
     category: "suelto",
     variant: "Blanco",
-    image: "/img/products/trapo-industrial-suelto-blanco.png",
+    image: "/img/products/trapo-industrial-suelto-blanco.webp",
     price: 3.9,
     summary:
       "Trapo suelto blanco para limpieza general, piezas y superficies cuando conviene visualizar el residuo retirado.",
@@ -82,7 +82,7 @@ export const PRODUCTS: Product[] = [
     name: "Merma de jean",
     category: "merma",
     variant: "Jean",
-    image: "/img/products/merma-jean.png",
+    image: "/img/products/merma-jean.webp",
     price: 0.25,
     summary:
       "Retazos y merma de jean para clasificación, reciclaje mecánico y reaprovechamiento como materia prima textil.",
@@ -97,7 +97,7 @@ export const PRODUCTS: Product[] = [
     name: "Trapo Industrial cosido manualmente - color",
     category: "cosido",
     variant: "Cosido manual · Color",
-    image: "/img/products/trapo-industrial-cosido-manual-color.png",
+    image: "/img/products/trapo-industrial-cosido-manual-color.webp",
     price: 2.1,
     summary:
       "Trapo de color cosido manualmente para limpieza general, grasa, aceite y mantenimiento frecuente.",
@@ -112,7 +112,7 @@ export const PRODUCTS: Product[] = [
     name: "Waipe - color",
     category: "waipe",
     variant: "Color",
-    image: "/img/products/waipe-color.png",
+    image: "/img/products/waipe-color.webp",
     price: 2.5,
     summary:
       "Waipe de color para limpieza general y retiro de aceite, grasa, lubricantes y suciedad de trabajo.",
@@ -127,7 +127,7 @@ export const PRODUCTS: Product[] = [
     name: "Waipe - blanco",
     category: "waipe",
     variant: "Blanco",
-    image: "/img/products/waipe-blanco.png",
+    image: "/img/products/waipe-blanco.webp",
     price: 4.3,
     summary:
       "Waipe blanco para limpieza general y mantenimiento cuando conviene observar con claridad el residuo retirado.",
