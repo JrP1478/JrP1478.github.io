@@ -1,0 +1,77 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import { getProduct, productPrice, productWhatsApp } from "../../data/products";
+import { SITE } from "../../data/site";
+
+const product = getProduct("merma-de-jean")!;
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  name: product.name,
+  image: new URL(product.image, SITE.domain).toString(),
+  description: product.summary,
+  brand: { "@type": "Brand", name: "Biohebra" },
+  offers: {
+    "@type": "Offer",
+    priceCurrency: "PEN",
+    price: product.price.toFixed(2),
+    url: new URL("/merma-de-jean/", SITE.domain).toString(),
+    availability: "https://schema.org/InStock",
+    seller: { "@type": "Organization", name: "Biohebra" },
+  },
+};
+---
+
+<BaseLayout
+  title="Merma de jean por kilo: retazos y merma textil | Biohebra"
+  description="Merma de jean y retazos textiles para reutilización, clasificación y procesos productivos. Precio S/ 0.25 por kilo. Consulta disponibilidad con Biohebra."
+  image={product.image}
+  pageType="product"
+  jsonLd={schema}
+>
+  <section class="product-detail-hero">
+    <div class="container">
+      <Breadcrumbs items={[{ label: "Merma de jean" }]} />
+      <div class="product-detail-grid">
+        <div class="product-detail-image">
+          <img src={product.image} alt={product.name} width="760" height="760" />
+        </div>
+        <div class="product-detail-copy">
+          <span class="eyebrow">Merma textil · Jean</span>
+          <h1>{product.name}</h1>
+          <p class="product-price">{productPrice(product)}</p>
+          <p class="lead">{product.summary}</p>
+          <div class="tag-list">
+            {product.applications.map((item) => <span class="tag">{item}</span>)}
+          </div>
+          <a class="button button-primary" href={productWhatsApp(product)} target="_blank" rel="noopener noreferrer">
+            Cotizar merma de jean
+          </a>
+          <p class="product-note">
+            La merma proviene de retazos y saldos textiles; composición visual, tamaños y colores
+            pueden variar según el lote. Confirma disponibilidad antes de comprar.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-soft">
+    <div class="container rich-copy">
+      <h2>¿Qué es la merma de jean?</h2>
+      <p>
+        Es material textil sobrante o recortado durante procesos productivos vinculados al denim o
+        jean. En lugar de desecharlo, puede clasificarse y reutilizarse como insumo para nuevos
+        procesos, rellenos, proyectos textiles u otras aplicaciones compatibles con el lote.
+      </p>
+      <h2>¿Qué debes confirmar antes de comprar?</h2>
+      <ul>
+        <li>Cantidad disponible del lote.</li>
+        <li>Características visibles del material.</li>
+        <li>Destino y condiciones de envío.</li>
+        <li>Uso previsto para validar si el lote es adecuado.</li>
+      </ul>
+    </div>
+  </section>
+</BaseLayout>

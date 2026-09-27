@@ -1,0 +1,58 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import ProductCard from "../../../components/ProductCard.astro";
+import Breadcrumbs from "../../../components/Breadcrumbs.astro";
+import { PRODUCTS } from "../../../data/products";
+
+const recommended = PRODUCTS.filter((p) =>
+  ["trapo-industrial-cosido-color", "trapo-industrial-cosido-economico-color", "waipe-color", "waipe-blanco"].includes(p.slug)
+);
+---
+
+<BaseLayout
+  title="Trapos para talleres mecánicos: grasa, aceite y mantenimiento | Biohebra"
+  description="Opciones de trapo industrial y waipe para talleres: grasa, aceite, herramientas, piezas, equipos y superficies. Compara precios por kilo."
+>
+  <section class="page-hero">
+    <div class="container">
+      <Breadcrumbs items={[{ label: "Usos" }, { label: "Trapos para talleres" }]} />
+      <div class="page-hero-copy">
+        <span class="eyebrow">Guía de uso</span>
+        <h1>Trapos para talleres mecánicos</h1>
+        <p class="lead">
+          En un taller los paños y wipers se usan habitualmente para retirar grasa, aceite y
+          suciedad de herramientas, piezas, equipos y superficies de trabajo. La presentación
+          adecuada depende de cuánto necesitas cambiar el material y del nivel de control visual.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-heading">
+        <h2>Opciones Biohebra para comparar</h2>
+        <p class="lead">
+          Las presentaciones de color son una opción práctica para suciedad de taller; las blancas
+          facilitan ver el residuo que se va retirando durante la limpieza.
+        </p>
+      </div>
+      <div class="product-grid">
+        {recommended.map((product) => <ProductCard product={product} />)}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-soft">
+    <div class="container rich-copy">
+      <h2>Qué considerar al elegir</h2>
+      <ul>
+        <li><strong>Grasa y aceite:</strong> compara trapo de color o waipe para tareas de limpieza habitual de taller.</li>
+        <li><strong>Formato suelto:</strong> útil cuando necesitas tomar y cambiar retazos con frecuencia.</li>
+        <li><strong>Formato cosido:</strong> la versión estándar incorpora refuerzo adicional; la económica usa costura simple y ofrece un menor precio.</li>
+        <li><strong>Material blanco:</strong> ayuda a observar visualmente la suciedad o residuo retirado.</li>
+        <li><strong>Compatibilidad:</strong> si utilizarás solventes o químicos, valida previamente que el material sea adecuado para tu proceso.</li>
+      </ul>
+    </div>
+  </section>
+</BaseLayout>

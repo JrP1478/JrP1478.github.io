@@ -1,0 +1,64 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import ProductCard from "../../components/ProductCard.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import { productsByCategory } from "../../data/products";
+import { whatsappLink } from "../../data/site";
+
+const products = productsByCategory("waipe");
+---
+
+<BaseLayout
+  title="Waipe industrial por kilo: color y blanco | Biohebra Perú"
+  description="Compra waipe industrial en color y blanco para limpieza, mantenimiento, aceite, grasa y superficies. Revisa precios por kilo y cotiza por WhatsApp."
+>
+  <section class="page-hero">
+    <div class="container">
+      <Breadcrumbs items={[{ label: "Waipe industrial" }]} />
+      <div class="page-hero-grid">
+        <div class="page-hero-copy">
+          <span class="eyebrow">Limpieza y mantenimiento</span>
+          <h1>Waipe industrial</h1>
+          <p class="lead">
+            Waipe de color y blanco para trabajos de limpieza, mantenimiento, maquinaria,
+            herramientas y superficies.
+          </p>
+          <a class="button button-primary" href={whatsappLink("Hola, quiero cotizar waipe industrial. ¿Me confirman disponibilidad en color y blanco?")} target="_blank" rel="noopener noreferrer">
+            Cotizar waipe
+          </a>
+        </div>
+        <aside class="page-hero-card">
+          <h2>Precios por kilo</h2>
+          <ul>
+            <li>Waipe - color: S/ 2.50 por kilo.</li>
+            <li>Waipe - blanco: S/ 4.50 por kilo.</li>
+            <li>Consulta disponibilidad y envío según cantidad.</li>
+          </ul>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="product-grid">
+        {products.map((product) => <ProductCard product={product} />)}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-soft">
+    <div class="container rich-copy">
+      <h2>Waipe de color para suciedad de trabajo</h2>
+      <p>
+        Puede utilizarse en talleres y mantenimiento para retirar grasa, aceite y suciedad de
+        herramientas, superficies o maquinaria.
+      </p>
+      <h2>Waipe blanco para trabajos donde necesitas ver el residuo</h2>
+      <p>
+        El color claro facilita observar visualmente la suciedad que se va retirando. La elección
+        depende del proceso, la superficie y el nivel de limpieza requerido.
+      </p>
+    </div>
+  </section>
+</BaseLayout>

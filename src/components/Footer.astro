@@ -1,0 +1,59 @@
+---
+import { SITE, whatsappLink } from "../data/site";
+import SocialIcon from "./SocialIcon.astro";
+---
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div>
+      <a class="brand brand-footer" href="/">
+        <img src="/img/svg/logo-sinfondo.png" alt="" width="46" height="46" loading="lazy" />
+        <span>Biohebra</span>
+      </a>
+      <p>
+        Trapo industrial, waipe y textiles reutilizados para limpieza, mantenimiento y reaprovechamiento.
+      </p>
+      <a class="footer-whatsapp" href={whatsappLink()} target="_blank" rel="noopener noreferrer">
+        Cotizar por WhatsApp →
+      </a>
+    </div>
+
+    <div>
+      <h2>Productos</h2>
+      <a href="/trapo-industrial/">Trapo industrial</a>
+      <a href="/trapo-industrial-suelto/">Trapo suelto</a>
+      <a href="/trapo-industrial-cosido/">Trapo cosido</a>
+      <a href="/waipe-industrial/">Waipe industrial</a>
+      <a href="/merma-de-jean/">Merma de jean</a>
+    </div>
+
+    <div>
+      <h2>Información</h2>
+      <a href="/usos/trapos-para-talleres/">Trapos para talleres</a>
+      <a href="/usos/trapos-para-grasa-y-aceite/">Grasa y aceite</a>
+      <a href="/usos/trapos-para-limpieza-industrial/">Limpieza industrial</a>
+      <a href="/contacto/">Contacto</a>
+    </div>
+
+    <div>
+      <h2>Biohebra</h2>
+      <p>RUC {SITE.ruc}</p>
+      <p>{SITE.location}</p>
+      <a href={"mailto:" + SITE.email}>{SITE.email}</a>
+      <div class="footer-social" aria-label="Redes sociales">
+        <a class="social-link social-link-footer social-link-facebook" href={SITE.facebook} target="_blank" rel="noopener noreferrer" aria-label="Biohebra en Facebook">
+          <span class="social-icon"><SocialIcon name="facebook" /></span>
+          <span>Facebook</span>
+        </a>
+        <a class="social-link social-link-footer social-link-tiktok" href={SITE.tiktok} target="_blank" rel="noopener noreferrer" aria-label="Biohebra en TikTok">
+          <span class="social-icon"><SocialIcon name="tiktok" /></span>
+          <span>TikTok</span>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <span>© {new Date().getFullYear()} Biohebra. Todos los derechos reservados.</span>
+    <span>biohebra.uk</span>
+  </div>
+</footer>

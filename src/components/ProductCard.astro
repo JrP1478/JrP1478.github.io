@@ -1,0 +1,34 @@
+---
+import type { Product } from "../data/products";
+import { productPrice, productRoute, productWhatsApp } from "../data/products";
+
+type Props = {
+  product: Product;
+  priority?: boolean;
+};
+
+const { product, priority = false } = Astro.props;
+---
+
+<article class="product-card">
+  <a class="product-card-image" href={productRoute(product)} aria-label={"Ver " + product.name}>
+    <img
+      src={product.image}
+      alt={product.name}
+      loading={priority ? "eager" : "lazy"}
+      decoding="async"
+    />
+    <span class="product-price-badge">{productPrice(product)}</span>
+  </a>
+  <div class="product-card-body">
+    <span class="product-kicker">{product.variant}</span>
+    <h3><a href={productRoute(product)}>{product.name}</a></h3>
+    <p>{product.summary}</p>
+    <div class="product-card-actions">
+      <a class="button button-primary" href={productWhatsApp(product)} target="_blank" rel="noopener noreferrer">
+        Cotizar
+      </a>
+      <a class="text-link" href={productRoute(product)}>Ver detalles →</a>
+    </div>
+  </div>
+</article>

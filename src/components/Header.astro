@@ -1,0 +1,65 @@
+---
+import { whatsappLink } from "../data/site";
+---
+
+<header class="site-header" data-header>
+  <div class="container header-inner">
+    <a class="brand" href="/" aria-label="Biohebra, ir al inicio">
+      <img src="/img/svg/logo-sinfondo.png" alt="" width="48" height="48" />
+      <span>Biohebra</span>
+    </a>
+
+    <button
+      class="menu-toggle"
+      type="button"
+      aria-expanded="false"
+      aria-controls="site-navigation"
+      data-menu-toggle
+    >
+      <span></span><span></span><span></span>
+      <span class="sr-only">Abrir menú</span>
+    </button>
+
+    <nav id="site-navigation" class="site-nav" aria-label="Navegación principal" data-menu>
+      <details class="nav-dropdown">
+        <summary>Productos</summary>
+        <div class="nav-dropdown-panel">
+          <a href="/trapo-industrial/">Trapo industrial</a>
+          <a href="/trapo-industrial-suelto/">Trapo suelto</a>
+          <a href="/trapo-industrial-cosido/">Trapo cosido</a>
+          <a href="/waipe-industrial/">Waipe industrial</a>
+          <a href="/merma-de-jean/">Merma de jean</a>
+        </div>
+      </details>
+      <a href="/#usos">Usos</a>
+      <a href="/#nosotros">Nosotros</a>
+      <a href="/contacto/">Contacto</a>
+      <a
+        class="button button-primary button-small nav-cta"
+        href={whatsappLink()}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Cotizar por WhatsApp
+      </a>
+    </nav>
+  </div>
+</header>
+
+<script is:inline>
+  const toggle = document.querySelector("[data-menu-toggle]");
+  const menu = document.querySelector("[data-menu]");
+  if (toggle && menu) {
+    toggle.addEventListener("click", () => {
+      const open = toggle.getAttribute("aria-expanded") === "true";
+      toggle.setAttribute("aria-expanded", String(!open));
+      menu.classList.toggle("is-open", !open);
+    });
+    menu.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        toggle.setAttribute("aria-expanded", "false");
+        menu.classList.remove("is-open");
+      });
+    });
+  }
+</script>

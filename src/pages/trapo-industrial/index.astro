@@ -1,0 +1,75 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import ProductCard from "../../components/ProductCard.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import { PRODUCTS } from "../../data/products";
+import { whatsappLink } from "../../data/site";
+
+const products = PRODUCTS.filter((p) => p.category === "cosido" || p.category === "suelto");
+---
+
+<BaseLayout
+  title="Trapo industrial por kilo en Perú: suelto y cosido | Biohebra"
+  description="Compra trapo industrial suelto y cosido en color o blanco. Compara versiones cosidas estándar y económicas, precios por kilo y usos para limpieza y mantenimiento."
+>
+  <section class="page-hero">
+    <div class="container">
+      <Breadcrumbs items={[{ label: "Trapo industrial" }]} />
+      <div class="page-hero-grid">
+        <div class="page-hero-copy">
+          <span class="eyebrow">Categoría principal</span>
+          <h1>Trapo industrial para limpieza y mantenimiento</h1>
+          <p class="lead">
+            Opciones de trapo suelto y trapo cosido en color y blanco, incluyendo versiones
+            cosidas estándar y económicas para talleres, fábricas y áreas de mantenimiento.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href={whatsappLink("Hola, quiero cotizar trapo industrial. ¿Me pueden ayudar a elegir entre trapo suelto y cosido?")} target="_blank" rel="noopener noreferrer">
+              Cotizar trapo industrial
+            </a>
+            <a class="button button-secondary" href="#opciones">Ver opciones</a>
+          </div>
+        </div>
+        <aside class="page-hero-card">
+          <h2>¿Suelto o cosido?</h2>
+          <ul>
+            <li><strong>Trapo suelto:</strong> retazos independientes para tomar y reemplazar según la tarea.</li>
+            <li><strong>Trapo cosido:</strong> retazos unidos en una pieza; hay versión estándar con refuerzo adicional y versión económica con costura simple.</li>
+            <li><strong>Color o blanco:</strong> elige según el tipo de trabajo y la visibilidad de la suciedad que necesites.</li>
+          </ul>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section id="opciones" class="section">
+    <div class="container">
+      <div class="section-heading">
+        <span class="eyebrow">Venta por kilo</span>
+        <h2>Opciones de trapo industrial Biohebra</h2>
+        <p class="lead">Consulta cada ficha para revisar aplicaciones, precio y contacto directo.</p>
+      </div>
+      <div class="product-grid">
+        {products.map((product) => <ProductCard product={product} />)}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-soft">
+    <div class="container rich-copy">
+      <span class="eyebrow">Guía rápida</span>
+      <h2>¿Qué trapo industrial elegir?</h2>
+      <p>
+        El formato adecuado depende del trabajo. Para tareas donde necesitas cambiar el material
+        con frecuencia, el trapo suelto puede resultar práctico. Si prefieres una pieza conformada,
+        revisa las opciones cosidas. La versión estándar incorpora refuerzo adicional y la versión
+        económica utiliza costura simple para reducir el precio cuando ese refuerzo no es necesario.
+      </p>
+      <p>
+        También puedes elegir entre color y blanco. El material blanco ayuda a observar visualmente
+        la suciedad durante el uso, mientras que las opciones de color son una alternativa común
+        para trabajos generales de taller y mantenimiento.
+      </p>
+    </div>
+  </section>
+</BaseLayout>

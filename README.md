@@ -1,112 +1,212 @@
-![landy](https://user-images.githubusercontent.com/48876996/121569479-e179db80-ca31-11eb-8a48-9c3de9b142f3.gif)
+# Biohebra Website
 
-![Landy React Template License](https://img.shields.io/github/license/Adrinlol/landy-react-template)
-![Landy React Template Release Date](https://img.shields.io/github/release-date/Adrinlol/landy-react-template)
-![Landy React TemplateStars](https://img.shields.io/github/stars/Adrinlol/landy-react-template)
-![Landy React Template Language](https://img.shields.io/github/languages/top/Adrinlol/landy-react-template)
-![Landy React Template TypeScript](https://badgen.net/npm/types/tslib)
+Sitio web comercial y SEO de Biohebra.
 
-## Free React landing page template
+- Producción: https://biohebra.uk
+- Repositorio: JrP1478/JrP1478.github.io
+- Rama de rediseño: redesign-2026
+- Despliegue: GitHub Pages
 
-[Landy][Landy] is an open-source React landing page template written in TypeScript, designed for developers and startups, who want to create a quick and professional landing page for their business or project.
+## Objetivo
 
-This React template comes with multi-lingual support, smooth animations, set of ready to use sections and most importantly, all of the content is stored in the JSON files, so that you can manage the texts without having any prior knowledge in React.js.
+El sitio está diseñado para convertir búsquedas relacionadas con trapo industrial, trapo suelto, trapo cosido, waipe industrial y merma de jean en consultas comerciales por WhatsApp.
 
-## Table of contents
+La arquitectura distribuye la intención de búsqueda entre páginas de categoría, fichas de producto y páginas por uso, en lugar de concentrar todo en una sola landing.
 
-- [Features](#features)
-- [Google Lighthouse](#google-lighthouse)
-  - [Performance](#performance)
-  - [Accessibility](#accessibility)
-  - [Best Practices](#best-practices)
-  - [SEO](#seo)
-- [Demo](#demo)
-- [Installation](#installation)
-- [Special Thanks](#special-thanks)
-- [Usage](#usage)
-- [License](#license)
+## Stack
 
-## Features
+- Astro
+- TypeScript
+- HTML estático
+- CSS
+- GitHub Pages
 
-Your project will have everything you need to build a modern single-page React app:
+Astro genera HTML estático para cada URL, facilitando el rastreo de categorías y productos y manteniendo una carga ligera.
 
-- 🎁 **Modern** – Template created using the latest features of React (State management using Hooks, Code-Splitting to reduce the bundle size)
+## Desarrollo local
 
-- 💻 **Responsive** – Highly responsive and reusable UI components, that change depending on the provided props
+Requisitos:
 
-- 🚀 **Fast** – Buttery smooth experience thanks to the implementation of best practices and no third party dependencies, resulting in <b>PERFECT</b> Google Lighthouse scores
+- Node.js 20 LTS o superior
+- npm
 
-- 🏷 **TypeScript support** – Landy is written in TypeScript to improve the DX
+Instalación:
 
-- 🌍 **Internationalization** - Prebuilt standalone file that works in every environment and doesn't require reloading the page to translate the content
+~~~bash
+npm install
+npm run dev
+~~~
 
-- 🛸 **Routing** - Each file inside the src/pages directory will generate its own route, so you don't have to manually handle the routing
+## Build
 
-- 🤙 **Contact Form** - Contact form written in React Hooks, with uncontrolled form validation to reduce unnecessary performance penalty. You just need to provide the endpoint
+~~~bash
+npm run build
+~~~
 
-- ⚙️ **Maintenance** - All of the content is stored in the JSON files, so that you can easily manage the content of the website
+La salida se genera en dist/.
 
-## Google Lighthouse
+Para revisar el build local:
 
-![1](https://user-images.githubusercontent.com/48876996/121569366-c313e000-ca31-11eb-940c-187f556ff0d6.png)
+~~~bash
+npm run preview
+~~~
 
-[Google Lighthouse][Google Lighthouse] is an open-source, automated tool for measuring the quality of web pages. Google Lighthouse audits performance, accessibility and search engine optimization of web pages.
+## Deploy a GitHub Pages
 
-### Performance
+El proyecto mantiene despliegue mediante la rama gh-pages:
 
-Audits for metrics like first paint and time to interactive to determine lag.
+~~~bash
+npm run deploy
+~~~
 
-### Accessibility
+El comando genera dist/ y publica el resultado en gh-pages. El archivo public/CNAME mantiene el dominio biohebra.uk dentro del build.
 
-Checks for common issues that may prevent users from accessing your content.
+## Estructura principal
 
-### Best Practices
+~~~text
+src/
+├── components/
+├── data/
+│   ├── products.ts
+│   └── site.ts
+├── layouts/
+├── pages/
+│   ├── index.astro
+│   ├── [slug].astro
+│   ├── trapo-industrial/
+│   ├── trapo-industrial-suelto/
+│   ├── trapo-industrial-cosido/
+│   ├── waipe-industrial/
+│   ├── merma-de-jean/
+│   ├── usos/
+│   ├── contacto/
+│   └── sitemap.xml.ts
+└── styles/
 
-Looks for everything from HTTPS usage to correct image aspect ratios.
+public/
+├── CNAME
+├── robots.txt
+├── fonts/
+└── img/
+~~~
 
-### SEO 
+## Productos y precios
 
-Checks for best practices to ensure your site is discoverable.
+La fuente de verdad del catálogo está en src/data/products.ts.
+
+| Producto | Precio |
+| --- | ---: |
+| Trapo Industrial cosido - color | S/ 1.90 por kilo |
+| Trapo Industrial cosido - blanco | S/ 3.10 por kilo |
+| Trapo Industrial cosido económico - color | S/ 1.70 por kilo |
+| Trapo Industrial cosido económico - blanco | S/ 2.80 por kilo |
+| Trapo Industrial suelto - color | S/ 3.10 por kilo |
+| Trapo Industrial suelto - blanco | S/ 3.90 por kilo |
+| Merma de jean | S/ 0.25 por kilo |
+| Trapo Industrial cosido manualmente - color | S/ 2.10 por kilo |
+| Waipe - color | S/ 2.50 por kilo |
+| Waipe - blanco | S/ 4.50 por kilo |
+
+Los precios históricos fueron recuperados del último build publicado previo al rediseño. Los productos cosidos económicos se añadieron posteriormente con precios de S/ 1.70/kg en color y S/ 2.80/kg en blanco. Usan costura simple y no incorporan el refuerzo adicional de la versión estándar. Antes de cambiar un precio en producción, validar que siga vigente.
+
+## WhatsApp y datos comerciales
+
+Los datos generales del negocio están centralizados en src/data/site.ts:
+
+- WhatsApp
+- correo
+- RUC
+- ubicación
+- horario
+- Facebook
+- TikTok
+- mapa
+- dominio
+
+Los enlaces de producto generan un mensaje de WhatsApp con el nombre y precio correspondiente.
+
+## SEO
+
+El sitio incorpora:
+
+- URL canónica por página
+- títulos y meta descriptions independientes
+- Open Graph y Twitter Card
+- datos estructurados Organization, WebSite, Product, Offer y FAQPage
+- robots.txt
+- sitemap.xml generado durante el build
+- páginas de categoría
+- fichas individuales de producto
+- páginas orientadas a usos y problemas de búsqueda
+
+Clusters principales:
+
+- trapo industrial
+- trapo suelto / trapo para limpieza
+- trapo cosido
+- waipe industrial
+- merma de jean
+- trapos para talleres
+- trapos para grasa y aceite
+- trapos para limpieza industrial
+
+No crear páginas casi idénticas para pequeñas variaciones de una palabra clave. Una URL nueva debe responder a una intención de búsqueda diferenciada.
+
+## Colores de marca
+
+~~~text
+#00693E
+#0A5C36
+#1E7B4C
+#8DC63F
+~~~
+
+Los tonos neutros se usan como soporte de legibilidad y jerarquía visual.
+
+## Imágenes
+
+Los recursos existentes se conservan en public/img/ y las imágenes de producto en public/img/products/.
+
+Al reemplazar una imagen:
+
+- mantener el producto real y reconocible
+- optimizar el peso del archivo
+- usar una resolución suficiente para tarjeta y ficha
+- conservar el mismo nombre cuando no sea necesario cambiar la referencia
+
+## Añadir un producto
+
+1. Añade la imagen a public/img/products/.
+2. Crea la entrada correspondiente en src/data/products.ts.
+3. Define nombre, slug, categoría, precio, resumen, descripción, usos y aplicaciones.
+4. La ficha individual se genera mediante src/pages/[slug].astro.
+5. Ejecuta npm run build antes de publicar.
+
+## Dominio
+
+El dominio de producción es https://biohebra.uk.
+
+No eliminar public/CNAME mientras GitHub Pages utilice este dominio personalizado.
+
+## Flujo recomendado
+
+~~~text
+redesign-2026
+    ↓ revisión
+main
+    ↓ build
+gh-pages
+    ↓
+biohebra.uk
+~~~
 
 
-## Demo
+## Renderizado de imágenes de producto
 
-Check the live demo here 👉️ https://landy-web.netlify.app/
+Las imágenes de producto se pueden normalizar a 1600 × 1200 px con reescalado Lanczos, enfoque controlado y ajustes de luminosidad mediante:
 
+~~~bash
+npm run render:products
+~~~
 
-### Installation
-
-You’ll need to have Node 10.16.0 or later version on your local development machine (but it’s not required on the server). I recommend using the latest LTS version.
-
-To create a new app, you have to:
-
-Begin by cloning this repository to establish your own local copy. This process is straightforward and ensures you have all the necessary files and resources at your fingertips. You can find step-by-step instructions in this helpful article: Cloning a [repository on GitHub.com](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository#cloning-a-repository).
-
-## What's included
-
-- [antd][antd] - React UI library that contains a set of high quality components.
-- [react-awesome-reveal][react-awesome-reveal] - High performance library that adds reveal animations using the Intersection Observer API.
-- [styled-componets][styled-componets] - Variant on “CSS-in-JS”—which solves many of the problems with traditional CSS.
-- [i18next][i18next] - Internationalization-framework written in and for JavaScript.
-
-## Special thanks
-
-[whoooa][whoooa] - Use fantastic, handmade illustrations with easily changeable colors and different styles.
-
-## Usage
-
-Use it for whatever you want, and be sure to reach out to me on [Twitter](https://twitter.com/Adrinlolx) if you have any questions, or build something cool with it.
-
-## License
-
-Licensed under the MIT license.
-
-<!-- prettier-ignore-start -->
-[antd]: https://github.com/ant-design/ant-design
-[react-awesome-reveal]: https://www.npmjs.com/package/react-awesome-reveal
-[styled-componets]: https://github.com/styled-components/styled-components
-[i18next]: https://github.com/i18next/i18next
-[whoooa]: https://www.whoooa.rocks/
-[Landy]: https://www.npmjs.com/package/cra-template-adrinlol
-[Google Lighthouse]: https://developers.google.com/web/tools/lighthouse
-<!-- prettier-ignore-end -->
+Los archivos de Waipe reciben una corrección adicional de luminosidad para evitar que se vean opacos en tarjetas y fichas de producto.

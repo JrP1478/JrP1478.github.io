@@ -1,0 +1,68 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import ProductCard from "../../../components/ProductCard.astro";
+import Breadcrumbs from "../../../components/Breadcrumbs.astro";
+import { PRODUCTS } from "../../../data/products";
+
+const recommendedSlugs = [
+  "trapo-industrial-cosido-color",
+  "trapo-industrial-cosido-economico-color",
+  "trapo-industrial-cosido-blanco",
+  "trapo-industrial-cosido-economico-blanco",
+  "waipe-color",
+];
+
+const recommended = recommendedSlugs
+  .map((slug) => PRODUCTS.find((product) => product.slug === slug))
+  .filter((product): product is (typeof PRODUCTS)[number] => Boolean(product));
+---
+
+<BaseLayout
+  title="Trapos para limpiar grasa y aceite | Biohebra Perú"
+  description="Para grasa y aceite, compara trapo industrial cosido estándar y económico, además de waipe. Revisa precios por kilo y el nivel de refuerzo que necesitas."
+>
+  <section class="page-hero">
+    <div class="container">
+      <Breadcrumbs items={[{ label: "Usos" }, { label: "Grasa y aceite" }]} />
+      <div class="page-hero-copy">
+        <span class="eyebrow">Limpieza de trabajo</span>
+        <h1>Trapos para limpiar grasa y aceite</h1>
+        <p class="lead">
+          Para trabajos con grasa, aceite y lubricantes, en Biohebra priorizamos el
+          <strong>trapo industrial cosido</strong>. La versión estándar incorpora refuerzo adicional,
+          mientras que la versión económica mantiene una costura simple y reduce el precio
+          cuando ese refuerzo no es necesario. El trapo suelto queda como alternativa para
+          limpieza general y tareas donde conviene reemplazar el material con frecuencia.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="product-grid">
+        {recommended.map((product) => <ProductCard product={product} />)}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-soft">
+    <div class="container rich-copy">
+      <h2>Cómo comparar las presentaciones</h2>
+      <ul>
+        <li><strong>Cosido estándar:</strong> opción con refuerzo adicional para quienes prefieren una confección más reforzada durante tareas repetitivas.</li>
+        <li><strong>Cosido económico:</strong> usa costura simple, sin el refuerzo adicional de la versión estándar, y reduce el precio cuando ese refuerzo no es necesario.</li>
+        <li><strong>Waipe:</strong> alternativa práctica para limpiar piezas, herramientas, superficies y equipos con suciedad de operación.</li>
+        <li><strong>Trapo suelto:</strong> útil para limpieza general y trabajos donde se necesita tomar retazos individuales y cambiarlos con frecuencia.</li>
+        <li><strong>Color:</strong> práctico para suciedad de trabajo porque las manchas de grasa y aceite son menos visibles durante el uso.</li>
+        <li><strong>Blanco:</strong> facilita observar la suciedad o residuo que se va retirando.</li>
+      </ul>
+      <h2>La absorción depende del material</h2>
+      <p>
+        La capacidad real de absorción depende de la composición, el espesor y el tipo de tejido
+        del lote. Si el trabajo exige absorber grandes cantidades de líquido o usar solventes y
+        desengrasantes, confirma primero que la presentación disponible sea adecuada para tu proceso.
+      </p>
+    </div>
+  </section>
+</BaseLayout>
