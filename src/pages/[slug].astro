@@ -43,14 +43,19 @@ const productSchema = {
   name: product.name,
   image: new URL(product.image, SITE.domain).toString(),
   description: product.summary,
-  brand: { "@type": "Brand", name: "Biohebra" },
+  brand: { "@type": "Brand", name: SITE.name },
   offers: {
     "@type": "Offer",
     priceCurrency: "PEN",
     price: product.price.toFixed(2),
     url: new URL(productRoute(product), SITE.domain).toString(),
     availability: "https://schema.org/InStock",
-    seller: { "@type": "Organization", name: "Biohebra" },
+    seller: {
+      "@type": "Organization",
+      "@id": new URL("/#organization", SITE.domain).toString(),
+      name: SITE.name,
+      url: new URL("/", SITE.domain).toString(),
+    },
   },
 };
 

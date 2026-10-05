@@ -9,6 +9,7 @@ type Props = {
   title: string;
   description: string;
   image?: string;
+  imageAlt?: string;
   canonicalPath?: string;
   pageType?: "website" | "product";
   jsonLd?: Record<string, unknown> | Record<string, unknown>[];
@@ -17,26 +18,50 @@ type Props = {
 const {
   title,
   description,
-  image = "/img/products/trapo-industrial-cosido-color.png",
+  image = "/img/products/trapo-industrial-cosido-color.webp",
+  imageAlt = title,
   canonicalPath = Astro.url.pathname,
   pageType = "website",
   jsonLd = [],
 } = Astro.props;
 
 const base = Astro.site ?? new URL(SITE.domain);
+const homeUrl = new URL("/", base).toString();
 const canonical = new URL(canonicalPath, base).toString();
 const socialImage = new URL(image, base).toString();
+const logoUrl = new URL("/img/svg/logo-sinfondo.png", base).toString();
+const organizationId = new URL("/#organization", base).toString();
+const websiteId = new URL("/#website", base).toString();
+const isHome = canonical === homeUrl;
 const extraSchemas = Array.isArray(jsonLd) ? jsonLd : [jsonLd];
 
 const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
+  "@id": organizationId,
   name: SITE.name,
-  url: SITE.domain,
-  logo: new URL("/img/svg/logo-sinfondo.png", base).toString(),
+  alternateName: ["Biohebra Perú", "biohebra.uk"],
+  url: homeUrl,
+  description:
+    "Biohebra comercializa trapo industrial, waipe y merma textil para limpieza, mantenimiento y reaprovechamiento, con atención en Lima y envíos a todo el Perú.",
+  logo: {
+    "@type": "ImageObject",
+    url: logoUrl,
+    contentUrl: logoUrl,
+    width: 342,
+    height: 396,
+  },
   email: SITE.email,
   taxID: SITE.ruc,
   telephone: SITE.phoneDisplay,
+  contactPoint: {
+    "@type": "ContactPoint",
+    contactType: "customer service",
+    telephone: SITE.phoneDisplay,
+    email: SITE.email,
+    availableLanguage: "Spanish",
+    areaServed: "PE",
+  },
   areaServed: {
     "@type": "Country",
     name: "Perú",
@@ -53,14 +78,19 @@ const organizationSchema = {
 const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
+  "@id": websiteId,
   name: SITE.name,
-  url: SITE.domain,
+  alternateName: ["Biohebra Perú", "biohebra.uk"],
+  url: homeUrl,
   inLanguage: "es-PE",
+  publisher: {
+    "@id": organizationId,
+  },
 };
 ---
 
 <!doctype html>
-<html lang="es">
+<html lang="es-PE">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
@@ -69,7 +99,8 @@ const websiteSchema = {
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
-    <link rel="icon" type="image/png" href="/img/svg/logo-sinfondo.png" />
+    <link rel="icon" href="/favicon.ico" sizes="48x48" />
+    <link rel="apple-touch-icon" href="/img/icons/logo192.png" />
 
     <meta property="og:locale" content="es_PE" />
     <meta property="og:type" content={pageType} />
@@ -78,14 +109,18 @@ const websiteSchema = {
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
     <meta property="og:image" content={socialImage} />
+    <meta property="og:image:alt" content={imageAlt} />
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={socialImage} />
+    <meta name="twitter:image:alt" content={imageAlt} />
 
     <script type="application/ld+json" set:html={JSON.stringify(organizationSchema)}></script>
-    <script type="application/ld+json" set:html={JSON.stringify(websiteSchema)}></script>
+    {isHome && (
+      <script type="application/ld+json" set:html={JSON.stringify(websiteSchema)}></script>
+    )}
     {extraSchemas.filter(Boolean).map((schema) => (
       <script type="application/ld+json" set:html={JSON.stringify(schema)}></script>
     ))}
