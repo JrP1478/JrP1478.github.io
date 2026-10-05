@@ -6,7 +6,7 @@ export const SITE = {
   email: "biohebra240825@gmail.com",
   ruc: "10071028238",
   location: "Lurigancho-Chosica, Lima, Perú",
-  facebook: "https://www.facebook.com/profile.php?id=61575594110845",
+  facebook: "https://www.facebook.com/share/1GcpCiwMce/",
   tiktok: "https://www.tiktok.com/@biohebra",
   scheduleWeek: "Lunes a Viernes: 6:00 am – 8:00 pm",
   scheduleSaturday: "Sábados: 6:00 am – 3:00 pm",

@@ -29,7 +29,7 @@ const base = Astro.site ?? new URL(SITE.domain);
 const homeUrl = new URL("/", base).toString();
 const canonical = new URL(canonicalPath, base).toString();
 const socialImage = new URL(image, base).toString();
-const logoUrl = new URL("/img/svg/logo-sinfondo.png", base).toString();
+const logoUrl = new URL("/img/svg/logo-biohebra.png", base).toString();
 const organizationId = new URL("/#organization", base).toString();
 const websiteId = new URL("/#website", base).toString();
 const isHome = canonical === homeUrl;
@@ -99,7 +99,7 @@ const websiteSchema = {
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
-    <link rel="icon" href="/favicon.ico" sizes="48x48" />
+    <link rel="icon" type="image/png" href="/img/svg/logo-biohebra.png" />
     <link rel="apple-touch-icon" href="/img/icons/logo192.png" />
 
     <meta property="og:locale" content="es_PE" />
