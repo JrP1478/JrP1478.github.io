@@ -4,6 +4,10 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "favicons": "node scripts/generate-favicons.mjs",
+    "predev": "npm run favicons",
+    "prestart": "npm run favicons",
+    "prebuild": "npm run favicons",
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",
